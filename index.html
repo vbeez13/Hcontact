@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vashist &amp; Hanaa — The Main Chick — Terms &amp; Conditions, Version 2.0</title>
+<meta name="theme-color" content="#5a0f1f">
+<style>
+/* ===== CUSTOMISE COLOURS & FONTS HERE ===== */
+:root{
+  --wine:#4a0b19; --burg:#7b1e33; --cream:#fbf3e4; --paper:#fff9ee; --blush:#f4d9d9;
+  --gold:#b08d3c; --gold-soft:#e2c98a; --ink:#3a1a20;
+  --serif:Georgia,"Palatino Linotype",Palatino,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.65;color:var(--ink);background:var(--wine) radial-gradient(circle at 50% 0,#7b1e33 0,var(--wine) 70%) fixed;overflow-x:hidden}
+button,input{font:inherit}
+:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
+.hidden{display:none!important}
+
+/* progress + utility */
+#prog{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft));z-index:50}
+#top{position:fixed;right:16px;bottom:16px;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);background:var(--paper);color:var(--burg);font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;z-index:40;box-shadow:0 4px 14px #0004}
+#top.on{opacity:1;pointer-events:auto}
+.btn{min-height:48px;padding:12px 26px;border-radius:999px;border:1px solid var(--gold);background:var(--burg);color:var(--cream);font-size:1rem;cursor:pointer;transition:transform .2s,background .2s;box-shadow:0 4px 14px #0003}
+.btn:hover{background:#932742;transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--burg);box-shadow:none}
+.link{background:none;border:0;color:var(--gold-soft);text-decoration:underline;cursor:pointer;min-height:44px;padding:8px 12px}
+
+/* ===== OPENING SCREEN ===== */
+#intro{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 20px;color:var(--cream);transition:opacity .6s}
+#intro.out{opacity:0}
+.env{position:relative;width:min(300px,78vw);height:190px;margin:0 auto 28px;background:linear-gradient(#f6e6cf,#ecd5b3);border:1px solid var(--gold);border-radius:6px;box-shadow:0 18px 40px #0006}
+.env::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 49.5%,#d9bf93 50%) left/50% 100% no-repeat,linear-gradient(225deg,transparent 49.5%,#d9bf93 50%) right/50% 100% no-repeat;border-radius:6px}
+.flap{position:absolute;left:0;top:0;width:100%;height:55%;background:#e6cfa8;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s ease}
+.seal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#b3304d,#6d1428);color:var(--gold-soft);display:grid;place-items:center;font-size:24px;border:2px solid #8d2038;box-shadow:0 3px 8px #0006;z-index:2;transition:opacity .4s}
+.env.open .flap{transform:rotateX(180deg)}
+.env.open .seal{opacity:0}
+#intro h1{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,8vw,3.2rem);letter-spacing:.12em;margin:0 0 6px}
+.tag{font-family:var(--serif);font-style:italic;font-size:1.25rem;margin:0 0 6px;color:var(--gold-soft)}
+.ver{font-size:.9rem;letter-spacing:.06em;margin:0 0 14px;opacity:.85}
+.sub{max-width:30em;margin:0 auto 24px;font-family:var(--serif);font-style:italic;opacity:.92}
+
+/* ===== MAIN DOCUMENT ===== */
+main{max-width:760px;margin:0 auto;padding:24px 14px 60px}
+.sheet{background:var(--paper);background-image:radial-gradient(#e9d9b822 1px,transparent 1px);background-size:6px 6px;border:1px solid var(--gold);outline:1px solid var(--gold-soft);outline-offset:-9px;border-radius:12px;padding:30px 18px;box-shadow:0 16px 50px #0006}
+.sheet>header{text-align:center;margin-bottom:22px}
+.sheet h2.title{font-family:var(--serif);color:var(--burg);font-size:clamp(1.5rem,6vw,2.1rem);line-height:1.25;margin:0;cursor:pointer;user-select:none}
+.orn{color:var(--gold);letter-spacing:.5em;margin:8px 0}
+.lead{font-family:var(--serif);font-style:italic;margin:0 auto;max-width:34em}
+.tools{display:flex;gap:8px;justify-content:center;margin:16px 0}
+details.art{border:1px solid var(--gold-soft);border-radius:10px;background:#fffdf7;margin:12px 0;overflow:hidden}
+details.art summary{list-style:none;display:flex;align-items:center;gap:12px;min-height:56px;padding:12px 14px;cursor:pointer;font-family:var(--serif);font-weight:700;color:var(--burg);font-size:1.08rem;line-height:1.3}
+details.art summary::-webkit-details-marker{display:none}
+details.art summary::after{content:"+";margin-left:auto;font-size:1.5rem;color:var(--gold);transition:transform .25s}
+details.art[open] summary::after{transform:rotate(45deg)}
+.num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--burg);color:var(--gold-soft);display:grid;place-items:center;font-size:.95rem}
+.body{padding:2px 16px 16px}
+.body p{margin:.7em 0}
+.note{font-size:.9rem;font-style:italic;color:#6b4a50;border-left:3px solid var(--gold-soft);padding-left:10px}
+
+/* Article 13 — the centrepiece */
+details.vow{border:2px solid var(--gold);background:linear-gradient(#fff6e2,#f8e8c8);box-shadow:0 0 0 4px #fff9ee,0 0 0 5px var(--gold-soft),0 10px 30px #7b1e3333}
+details.vow summary{font-size:1.2rem}
+.eff{text-align:center;color:var(--gold);font-family:var(--serif);font-style:italic;font-size:.95rem;border-bottom:1px solid var(--gold-soft);padding-bottom:10px;margin-bottom:6px}
+.letter p{font-family:var(--serif);font-size:1.12rem;line-height:1.8}
+.letter p:first-of-type::first-letter{font-size:2.6em;float:left;line-height:.9;padding:4px 8px 0 0;color:var(--burg)}
+.letter .sig{text-align:right;font-style:italic;color:var(--burg)}
+details.vow[open] .letter{animation:rise 1s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Article 14 */
+.bday .date{text-align:center;font-family:var(--serif);color:var(--gold);font-size:2.4rem;letter-spacing:.08em;margin:6px 0 0;line-height:1.1}
+.bday .date small{display:block;font-size:.9rem;letter-spacing:.2em}
+
+/* Final declaration */
+.final{margin-top:30px;text-align:center}
+.final h2{font-family:var(--serif);color:var(--burg);letter-spacing:.1em;font-size:1.4rem;margin:0 0 10px}
+.sigs{display:grid;gap:14px;margin:22px 0;text-align:left}
+@media(min-width:620px){.sigs{grid-template-columns:1fr 1fr}.sheet{padding:40px 36px}}
+.party{border:1px solid var(--gold-soft);border-radius:10px;padding:14px;background:#fffdf7}
+.party h3{margin:0 0 8px;font-size:1rem;color:var(--burg)}
+.sigline{min-height:54px;border-bottom:1.5px solid var(--gold);font-family:"Snell Roundhand","Brush Script MT","Segoe Script",cursive;font-size:1.9rem;color:var(--burg);overflow-wrap:anywhere}
+label{display:block;font-size:.85rem;margin-top:10px;color:#6b4a50}
+input{width:100%;min-height:46px;padding:8px 12px;border:1px solid var(--gold);border-radius:8px;background:#fff;color:var(--ink);font-size:1rem}
+.msg{min-height:1.6em;font-family:var(--serif);font-style:italic;color:var(--burg);margin:12px 0}
+.row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.fine{font-size:.9rem;font-style:italic;margin-top:24px;color:#6b4a50}
+
+/* decoration */
+.fh{position:fixed;bottom:-30px;pointer-events:none;color:#c0405a;z-index:30;animation:fl linear forwards}
+@keyframes fl{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.cur{position:fixed;left:0;top:0;pointer-events:none;color:#c0405a;z-index:60;font-size:14px;opacity:.8}
+#egg{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);max-width:90vw;background:var(--burg);color:var(--cream);border:1px solid var(--gold);border-radius:12px;padding:14px 18px;text-align:center;font-family:var(--serif);font-style:italic;z-index:70;box-shadow:0 8px 24px #0006}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  #intro,#top,#prog,.tools,.fh,.cur,#egg,.row,.btn,.link{display:none!important}
+  .sheet{box-shadow:none;border:0;outline:0;background:#fff;padding:0}
+  details.art{break-inside:avoid;border-color:#999;background:#fff}
+  .body{display:block}
+  details.art summary::after{display:none}
+}
+</style>
+</head>
+<body>
+<div id="prog" aria-hidden="true"></div>
+
+<!-- ===== OPENING SCREEN ===== -->
+<section id="intro" aria-label="Opening">
+  <div class="env" id="env" aria-hidden="true"><div class="flap"></div><div class="seal">♥</div></div>
+  <h1>VASHIST &amp; HANAA</h1>
+  <p class="tag">The Main Chick — Terms &amp; Conditions</p>
+  <p class="ver">Version 2.0 | Confidential | Three Years in the Making</p>
+  <!-- Edit the subtitle below -->
+  <p class="sub">“A legally questionable document concerning an unusually persistent soft spot.”</p>
+  <button class="btn" id="open">Open the Agreement 💌</button>
+  <button class="link" id="skip">Skip the animation</button>
+</section>
+
+<!-- ===== THE AGREEMENT ===== -->
+<main id="doc" class="hidden">
+  <div class="sheet">
+    <header>
+      <h2 class="title" id="title">Vashist &amp; Hanaa — The Main Chick — Terms &amp; Conditions, Version 2.0</h2>
+      <div class="orn" aria-hidden="true">♥ ❦ ♥</div>
+      <p class="lead">Fourteen articles, one very long friendship, and a boy who could have simply sent a text. Tap an article to open it.</p>
+      <div class="tools">
+        <button class="btn ghost" id="expand">Open all</button>
+        <button class="btn ghost" id="collapse">Close all</button>
+      </div>
+    </header>
+
+    <div id="articles"></div>
+
+    <section class="final" aria-labelledby="fd">
+      <div class="orn" aria-hidden="true">♥ ❦ ♥</div>
+      <h2 id="fd">FINAL DECLARATION &amp; ACCEPTANCE</h2>
+      <p>This document is a playful expression of affection, not a legally binding contract and not an assumption that either person has agreed to a relationship. It creates no obligation to date, commit, sign, or return feelings. Any real relationship must be chosen freely by both people.</p>
+      <div class="sigs">
+        <div class="party">
+          <h3>Party A: Vashist</h3>
+          <div class="sigline">The Boy Who Wrote All This</div>
+          <label for="dA">Date (optional)</label><input type="date" id="dA">
+        </div>
+        <div class="party">
+          <h3>Party B: Hanaa</h3>
+          <div class="sigline" id="sigB" aria-live="polite"></div>
+          <label for="nameB">Type your name only if you want to</label>
+          <input type="text" id="nameB" autocomplete="off" maxlength="40" placeholder="Totally optional">
+          <label for="dB">Date (optional)</label><input type="date" id="dB">
+        </div>
+      </div>
+      <p class="msg" id="msg" aria-live="polite"></p>
+      <div class="row">
+        <button class="btn" id="sign">Sign This Suspicious Agreement ✍️</button>
+        <button class="btn ghost" id="reset">Clear signature</button>
+      </div>
+      <p class="fine">Prepared with an unreasonable amount of effort by a boy who could have simply sent a text.</p>
+      <div class="row" style="margin-top:14px">
+        <button class="btn ghost" id="replay">Replay the opening</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+/* ===== ARTICLE TEXT — edit freely. Each entry: [number, title, HTML body] ===== */
+const A=[
+[1,"Main Chick Status",`<p>Hanaa holds a very special place in Vashist’s heart. This article establishes honesty, affection, respect, and making each other feel valued. Neither party should have to compete for attention or guess where they stand.</p><p>Her official position as Main Chick is subject to an extremely serious but completely unnecessary internship evaluation. Results are expected whenever the committee finishes laughing.</p>`],
+[2,"Loyalty & Reassurance",`<p>Loyalty and exclusivity apply only if both people freely agree to an exclusive relationship. Neither person already owes the other exclusivity. If that commitment is ever chosen, there will be no secret roster and no misleading promises.</p><p>Trust is built through consistent actions, honesty, and reassurance, never through demands or surveillance.</p><p class="note">The 🥺 emoji is formally recognised as a reassurance request. It is very effective. The committee is aware.</p>`],
+[3,"Quality Time & Communication",`<p>Both parties will make time for each other, plan outings, communicate honestly, and enjoy real-world experiences together.</p><p>Hanaa has asked, “where does Vashist want to go?” The planning department respectfully notes that it cannot operate forever on one employee. Suggestions from the other employee are welcome.</p><p>It must also be admitted that the two parties still need to meet and discover whether their WhatsApp chemistry translates into real-life chemistry. Exciting. Slightly terrifying. No pressure.</p>`],
+[4,"The Ancient One & Her Equipment",`<p>Vashist’s ongoing allegations are noted: that Hanaa is old, that her hearing and other senses are questionable, and that her glasses deserve their own maintenance contract.</p><p>These are affectionate inside jokes and not genuine criticism. Hanaa may roast Vashist back without restrictions, at any time, in any quantity.</p><p class="note">Disclaimer: any claims about her age, hearing, eyesight, or equipment are unverified allegations and must not be admitted as evidence in court.</p>`],
+[5,"The Treasury Department",`<p>Hanaa frequently and jokingly asks Vashist for money, which prompts the great question of our time: “Am I your favourite person, or your personal ATM?”</p><p>The Treasury Department therefore adopts the following policy:</p><p>1. All financial requests must be submitted with the appropriate 🥺 expression.<br>2. Approval is not guaranteed.<br>3. The Treasury Department reserves the right to request a smile, a joke, or an explanation of the proposed budget.<br>4. No financial contribution is an obligation or a test of affection.</p><p>Asking is never shameful. It is simply entertaining, and the paperwork is part of the fun.</p>`],
+[6,"The International Music Incident",`<p>Hanaa recently sang a Chinese song to Vashist as a joke. The event is hereby recognised as a historic cultural and musical occasion.</p><p>1. Vashist has the right to request an encore.<br>2. Hanaa has the right to deny that the performance ever happened.<br>3. No subtitles, translations, or record deal are guaranteed.<br>4. Any concert ticket fees are referred to Article 5.</p>`],
+[7,"Flirting & Affection",`<p>Playful teasing, compliments, sweet messages, romantic banter, and making each other smile are all permitted and encouraged.</p><p>Each person may express affection at their own pace. Flirting should always be mutual, respectful, and welcome. If it stops being welcome, it stops.</p>`],
+[8,"Difficult Stuff",`<p>Beneath the jokes are real things: trust and past experiences, religious differences, family expectations, and uncertainty about the future. Getting to know each other properly matters more than rushing past them.</p><p>Neither person is expected to have every answer immediately. There must be room for honest conversations, patience, and personal boundaries.</p><p>Vashist does not want Hanaa to feel pressured into making promises she is not ready to make.</p>`],
+[9,"Dispute Resolution",`<p>When misunderstandings happen, both people should communicate honestly, listen, apologise when appropriate, and resolve concerns respectfully.</p><p>The following are banned: unnecessary mind games, deliberate confusion, and arguments conducted entirely through mysterious one-word replies. “Fine.” is not a legal argument.</p>`],
+[10,"Heel Signature Requirement",`<p>Hanaa once asked, “sign on my heels? 🥺”. This article acknowledges the request in full.</p><p>Vashist is prepared to provide a signature, subject to the usual highly questionable legal procedures. These include a notary (a very confident pigeon), an imaginary witness (Gerald, who saw nothing), and the following disclaimer: the signature is not legally binding, not admissible anywhere, and possibly not even dry.</p><p class="note">The signature is not a condition for receiving affection or being treated well. Hanaa gets those regardless.</p>`],
+[11,"Busy Life Exemption",`<p>Both people have work, responsibilities, personal lives, and difficult days. Late replies are not automatically criminal offences, and nobody is expected to be available every second of every day.</p><p>Reasonable communication and consideration are encouraged, especially when someone is going through a hard phase. A short “busy, talk later” is a perfectly good message.</p>`],
+[12,"Equal Effort & Mutual Respect",`<p>A meaningful connection involves mutual effort, respect, consideration, and interest. Nobody should carry the whole thing alone.</p><p>Both people are free to express their needs, keep their independence, and decide what is right for them. This is meant warmly, not as a scorecard.</p>`],
+[13,"THE VASHIST VOW",`<div class="eff">Effective from 13 February — The Day Before Valentine’s Day.</div><div class="letter">
+<p>Hanaa, jokes aside, there is something I want you to know.</p>
+<p>You have held a special place in my heart for a long time. My feelings for you are not just a passing joke or something I say because we happen to flirt. I genuinely like you — your personality, your humour, your quirks, and even the little moments when you make me laugh without trying.</p>
+<p>I want to cherish you, appreciate you, listen to you, and make you feel valued. I want to learn more about the person you are beyond our messages, to share real experiences, create memories, and discover who we might become together.</p>
+<p>I know there are things that make this complicated. I know you have fears, responsibilities, and concerns about the future. I don’t expect you to ignore those things, and I don’t want you to feel pressured to promise me something you aren’t sure about.</p>
+<p>I cannot promise that the future will be perfect, and I won’t pretend that feelings alone can solve every difficult question. What I can offer is sincerity, patience, honesty, and a genuine willingness to make an effort.</p>
+<p>If we both choose to explore this connection, I want to do it properly — one step at a time, with respect for each other and without forcing an answer before we’re ready.</p>
+<p>You don’t have to be perfect, and you don’t have to have everything figured out. I simply want the chance to get to know you more, cherish the moments we share, make you smile, and show you through my actions that you matter to me.</p>
+<p>Behind all the teasing, ridiculous contracts, and questionable legal clauses, there is a boy who genuinely likes you and wants to see you happy.</p>
+<p>And yes, unfortunately for you, he is still me.</p>
+<p class="sig">— Vashist</p></div>`],
+[14,"Valentine’s Day & Heel Authentication Clause",`<p class="date">14 FEBRUARY<small>🎂 Hanaa’s birthday 🎂</small></p><p>1. Birthday privileges are automatically activated on 14 February.<br>2. The Main Chick is entitled to extra affection, attention, smiles, and birthday wishes, because it is her day first and Valentine’s Day second.<br>3. Heel authentication procedures remain available upon request.<br>4. Any birthday-related Treasury Department requests remain governed by Article 5.<br>5. Vashist reserves the right to make one additional old-age joke, subject to immediate retaliation from Hanaa.</p>`]
+];
+
+const $=id=>document.getElementById(id);
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Build accordion. Article 13 starts open. */
+$('articles').innerHTML=A.map(([n,t,b])=>
+ `<details class="art${n==13?' vow':''}${n==14?' bday':''}"${n==13?' open':''}><summary><span class="num">${n}</span><span>Article ${n} — ${t}</span></summary><div class="body">${b}</div></details>`).join('');
+const all=()=>[...document.querySelectorAll('details.art')];
+$('expand').onclick=()=>all().forEach(d=>d.open=true);
+$('collapse').onclick=()=>all().forEach(d=>d.open=false);
+
+/* Floating hearts (skipped when reduced motion is on) */
+function hearts(n=14){
+  if(rm)return;
+  for(let i=0;i<n;i++){
+    const h=document.createElement('span');
+    h.className='fh';h.textContent=i%3?'♥':'❤';
+    h.style.left=Math.random()*100+'vw';
+    h.style.fontSize=(14+Math.random()*18)+'px';
+    h.style.animationDuration=(3+Math.random()*3)+'s';
+    h.style.animationDelay=(Math.random()*.8)+'s';
+    h.addEventListener('animationend',()=>h.remove());
+    document.body.appendChild(h);
+  }
+}
+
+/* Opening / skipping / replaying */
+function reveal(){
+  $('intro').classList.add('hidden');$('doc').classList.remove('hidden');
+  window.scrollTo(0,0);hearts(10);
+}
+$('open').onclick=()=>{
+  $('env').classList.add('open');
+  if(rm)return reveal();
+  setTimeout(()=>$('intro').classList.add('out'),700);
+  setTimeout(reveal,1200);
+};
+$('skip').onclick=reveal;
+$('replay').onclick=()=>{
+  $('doc').classList.add('hidden');
+  const i=$('intro');i.classList.remove('hidden','out');
+  $('env').classList.remove('open');window.scrollTo(0,0);
+};
+
+/* Progress bar + back to top */
+function onScroll(){
+  const h=document.documentElement,max=h.scrollHeight-innerHeight;
+  $('prog').style.width=(max>0?scrollY/max*100:0)+'%';
+  $('top').classList.toggle('on',scrollY>600);
+}
+addEventListener('scroll',onScroll,{passive:true});
+$('top').onclick=()=>scrollTo({top:0,behavior:rm?'auto':'smooth'});
+
+/* Easter egg: click the title three times */
+let clicks=0,timer;
+$('title').onclick=()=>{
+  clearTimeout(timer);clicks++;
+  timer=setTimeout(()=>clicks=0,1200);
+  if(clicks>=3){
+    clicks=0;
+    const e=document.createElement('div');e.id='egg';e.setAttribute('role','status');
+    e.textContent='Three years later, and he is still finding excuses to talk about her. 💌';
+    document.body.appendChild(e);hearts(8);
+    setTimeout(()=>e.remove(),5000);
+  }
+};
+
+/* Signing — completely optional, nothing leaves this browser */
+$('sign').onclick=()=>{
+  const v=$('nameB').value.trim();
+  if(!v){$('msg').textContent='Signing is completely optional. Type a name here only if you want to.';return;}
+  $('sigB').textContent=v;
+  $('msg').textContent='The legal department has absolutely no idea what it is doing. ❤️';
+  hearts(22);
+};
+$('reset').onclick=()=>{$('nameB').value='';$('sigB').textContent='';$('dB').value='';$('msg').textContent='';};
+
+/* Heart cursor decoration — desktop with a mouse only; the normal cursor stays */
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!rm){
+  const c=document.createElement('div');c.className='cur';c.textContent='♥';c.setAttribute('aria-hidden','true');
+  document.body.appendChild(c);
+  addEventListener('mousemove',e=>c.style.transform=`translate(${e.clientX+12}px,${e.clientY+12}px)`);
+}
+
+/* Print: open every article */
+addEventListener('beforeprint',()=>all().forEach(d=>d.open=true));
+</script>
+</body>
+</html>
